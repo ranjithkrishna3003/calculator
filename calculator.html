@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.5.2-web/css/all.css">
+</head>
+<body class="bg-dark">
+    <div class="col-5 m-auto mt-5">
+        <div class="card border p-2">
+            <div class="card-head text-end p-2 border shadow">
+                <h3 id="display" style="height: 40px; width: 100%;"></h3>
+            </div>
+            <div class="card-body m-auto mt-3">
+                <button type="button" class="btn btn-dark ps-4 pe-4 me-4" id="clear">AC</i></button>
+                <button type="button" class="btn btn-warning ms-3 me-3" id="plus"><i class="fa-solid fa-plus"></i></i></button>
+                <button type="button" class="btn btn-warning ms-3 me-3" id="minus"><i class="fa-solid fa-minus"></i></button>
+                <button type="button" class="btn btn-warning ms-3 me-3" id="multiply"><i class="fa-solid fa-xmark"></i></button>
+                <button type="button" class="btn btn-warning ms-3 me-3" id="divide"><i class="fa-solid fa-divide"></i></button>
+                <button type="button" class="btn btn-dark ps-4 pe-4 ms-4" id="equal"><i class="fa-solid fa-equals"></i></button>
+            </div>
+            <div class="card-body2 m-auto">
+                <div class="mt-3">
+                    <button type="button" class="btn btn-outline-dark p-3 ps-4 pe-4 fw-bold" id="seven">7</button>
+                    <button type="button" class="btn btn-outline-dark ms-5 me-5 p-3 ps-4 pe-4 fw-bold" id="eight">8</button>
+                    <button type="button" class="btn btn-outline-dark p-3 ps-4 pe-4 fw-bold" id="nine">9</button>
+                </div>
+                <div class="mt-4">
+                    <button type="button" class="btn btn-outline-dark p-3 ps-4 pe-4 fw-bold" id="four">4</button>
+                    <button type="button" class="btn btn-outline-dark ms-5 me-5 p-3 ps-4 pe-4 fw-bold" id="five">5</button>
+                    <button type="button" class="btn btn-outline-dark p-3 ps-4 pe-4 fw-bold" id="six">6</button>
+                </div>
+                <div class="mt-4">
+                    <button type="button" class="btn btn-outline-dark p-3 ps-4 pe-4 fw-bold" id="one">1</button>
+                    <button type="button" class="btn btn-outline-dark ms-5 me-5 p-3 ps-4 pe-4 fw-bold" id="two">2</button>
+                    <button type="button" class="btn btn-outline-dark p-3 ps-4 pe-4 fw-bold" id="three">3</button>
+                </div>
+                <div class="mt-4 mb-4 d-flex justify-content-center">
+                    <button type="button" class="btn btn-outline-dark p-3 ps-4 pe-4 fw-bold" id="zero">0</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let display=document.getElementById("display")
+        let clear=document.getElementById("clear")
+        let plus=document.getElementById("plus")
+        let minus=document.getElementById("minus")
+        let multiply=document.getElementById("multiply")
+        let divide=document.getElementById("divide")
+        let equal=document.getElementById("equal")
+        let one=document.getElementById("one")
+        let two=document.getElementById("two")
+        let three=document.getElementById("three")
+        let four=document.getElementById("four")
+        let five=document.getElementById("five")
+        let six=document.getElementById("six")
+        let seven=document.getElementById("seven")
+        let eight=document.getElementById("eight")
+        let nine=document.getElementById("nine")
+        let zero=document.getElementById("zero")
+        
+        let str=""
+
+        function addToDisplay(value) {
+            str=str+value
+            display.textContent=str
+        }
+        one.addEventListener("click", () => addToDisplay("1"));
+        two.addEventListener("click", () => addToDisplay("2"));
+        three.addEventListener("click", () => addToDisplay("3"));
+        four.addEventListener("click", () => addToDisplay("4"));
+        five.addEventListener("click", () => addToDisplay("5"));
+        six.addEventListener("click", () => addToDisplay("6"));
+        seven.addEventListener("click", () => addToDisplay("7"));
+        eight.addEventListener("click", () => addToDisplay("8"));
+        nine.addEventListener("click", () => addToDisplay("9"));
+        zero.addEventListener("click", () => addToDisplay("0"));
+        plus.addEventListener("click", () => addToDisplay("+"));
+        minus.addEventListener("click", () => addToDisplay("-"));
+        multiply.addEventListener("click", () => addToDisplay("*"));
+        divide.addEventListener("click", () => addToDisplay("/"));
+        equal.addEventListener("click", () => {
+            let result = eval(str);
+            display.textContent = result;
+            str = result.toString();
+        });
+        clear.addEventListener("click", () => {
+            display.textContent=""
+            str=""
+        });
+    </script>
+</body>
+</html>
